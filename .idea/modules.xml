@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day02_01_primary_key/day02_01_primary_key.iml" filepath="$PROJECT_DIR$/day02_01_primary_key/day02_01_primary_key.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02_02_manyTable/day02_02_manyTable.iml" filepath="$PROJECT_DIR$/day02_02_manyTable/day02_02_manyTable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_01_manyTable/day03_01_manyTable.iml" filepath="$PROJECT_DIR$/day03_01_manyTable/day03_01_manyTable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_01_lianXi/day04_01_lianXi.iml" filepath="$PROJECT_DIR$/day04_01_lianXi/day04_01_lianXi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01_01_quickstary/day_01_quickstary.iml" filepath="$PROJECT_DIR$/day01_01_quickstary/day_01_quickstary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01_02_dao_tardition/day_02_dao_tardition.iml" filepath="$PROJECT_DIR$/day01_02_dao_tardition/day_02_dao_tardition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis.iml" filepath="$PROJECT_DIR$/mybatis.iml" />
+    </modules>
+  </component>
+</project>

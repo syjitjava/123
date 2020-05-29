@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day02_01_primary_key" />
+        <module name="day02_02_manyTable" />
+        <module name="day03_01_manyTable" />
+        <module name="day04_01_lianXi" />
+        <module name="day_01_primary_key" />
+        <module name="day_01_quickstary" />
+        <module name="day_02_dao_tardition" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day02_01_primary_key" target="1.5" />
+      <module name="day02_01_primary_key (1)" target="1.5" />
+      <module name="day02_02_manyTable" target="1.5" />
+      <module name="day03_01_manyTable" target="1.5" />
+      <module name="day04_01_lianXi" target="1.5" />
+      <module name="day_01_primary_key" target="1.5" />
+      <module name="day_01_quickstary" target="1.5" />
+      <module name="day_02_dao_tardition" target="1.5" />
+      <module name="mybatis" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

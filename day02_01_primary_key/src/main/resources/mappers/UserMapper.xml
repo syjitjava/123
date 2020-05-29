@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tiheima.dao.userDao">
+
+  <!-- <insert id="save" parameterType="com.tiheima.domain.User" useGeneratedKeys="true" keyProperty="uid">
+      insert into user(name,password,email,birthday) values (#{name},#{password},#{email},#{birthday});
+   </insert>-->
+    <insert id="save" parameterType="com.tiheima.domain.User">
+<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="uid">
+    SELECT LAST_insert_id();
+</selectKey>
+        insert into user(name,password,email,birthday) values (#{name},#{password},#{email},#{birthday});
+    </insert>
+<update id="update" parameterType="com.tiheima.domain.User" useGeneratedKeys="true" keyProperty="uid">
+    update user
+    <set>
+        <if test="name != null and name != ''">
+            name=#{name},
+        </if>
+        <if test="password != null and password != ''">
+            password=#{password},
+        </if><if test="email != null and email != ''">
+        email=#{email},
+    </if><if test="birthday != null">
+        birthday=#{ birthday},
+    </if>
+    </set>
+     where uid = #{uid};
+</update>
+    <select id="findByName" resultType="com.tiheima.domain.User">
+        SELECT  * FROM USER
+        <where>
+        <if test="name != null and name != ''">
+            and name =#{name}
+        </if>
+        <if test="email != null and email != ''">
+            and email =#{email}
+        </if>
+        </where>
+    </select>
+    <select id="findByName1" resultType="com.tiheima.domain.User">
+        SELECT  * FROM USER
+        <where>
+            <choose>
+                <when test="name != null and name != ''">
+                    and name =#{name}
+                </when>
+                <when test="email != null and email != ''">
+                    and email =#{email}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+    <select id="findByUids" resultType="com.tiheima.domain.User">
+        SELECT  * from user where uid IN
+        <foreach collection="uids" item="list" open="(" separator="," close=")">
+            #{list}
+        </foreach>
+    </select>
+</mapper>

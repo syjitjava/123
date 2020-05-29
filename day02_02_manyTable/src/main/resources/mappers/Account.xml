@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <resultMap id="resultMap" type="account">
+        <result column="aid" property="aid"></result>
+        <result column="accountName" property="accountName"></result>
+        <result column="balance" property="balance"></result>
+        <association property="user" javaType="user">
+        <result column="uid" property="uid"></result>
+        <result column="name" property="name"></result>
+        <result column="password" property="password"></result>
+        <result column="email" property="email"></result>
+        <result column="birthday" property="birthday"></result>
+        </association>
+    </resultMap>
+<select id="findAllWithUser" resultMap="resultMap">
+    select * from account a LEFT JOIN USER u ON a.aid = u.uid;
+</select>
+</mapper>

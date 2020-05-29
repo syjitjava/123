@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tiheima.dao.userDao">
+
+   <insert id="save" parameterType="com.tiheima.domain.User">
+      insert into user(name,password,email,birthday) values (#{name},#{password},#{email},#{birthday});
+   </insert>
+<update id="update" parameterType="com.tiheima.domain.User">
+    update user set
+    name=#{name},
+    password=#{password},
+    email =#{email},
+    birthday =#{birthday}
+     where uid = #{uid};
+</update>
+    <delete id="deleteByUid" parameterType="com.tiheima.domain.User">
+        DELETE FROM  USER where uid =#{uid};
+    </delete>
+    <select id="findAll" resultType="com.tiheima.domain.User">
+        SELECT * from user;
+    </select>
+    <resultMap id="userMap" type="com.tiheima.domain.User">
+        <id column="id" property="uid"/>
+        <result column="username" property="name"/>
+    </resultMap>
+    <select id="findAllMap" resultMap="userMap">
+        SELECT uid AS id,name AS username,email,birthday FROM user;
+    </select>
+    <select id="findAllNameAnd" resultType="com.tiheima.domain.User">
+        SELECT * from user where name=#{arg0}and email=#{arg1};
+    </select>
+    <select id="findAllNameAnd2" resultType="com.tiheima.domain.User">
+        SELECT * from user where name=#{name}and email=#{email};
+    </select>
+    <select id="findByName" resultType="com.tiheima.domain.User">
+        SELECT * from user where name LIKE concat("%",#{name},"%");
+    </select>
+</mapper>
